@@ -1,6 +1,6 @@
 baseURL: "https://johnhollowell.com/blog/"
 languageCode: "en-us"
-title: "/dev/random: A bit over everything"
+title: "/dev/random: A Bit of Everything"
 # theme: "ace-doc"
 publishdir: "public/"
 outputs:
