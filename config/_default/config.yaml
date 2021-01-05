@@ -1,0 +1,64 @@
+baseURL: "https://johnhollowell.com/blog/"
+languageCode: "en-us"
+title: "/dev/random: A Bit of Everything"
+theme: "zzo"
+publishdir: "public/"
+
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+
+enableEmoji: true
+enableRobotsTXT: true
+
+markup:
+  goldmark:
+    renderer:
+      hardWraps: true
+      unsafe: true
+      xHTML: true
+  highlight:
+    codeFences: true
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: false
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
+outputs:
+  home:
+    - HTML
+    - RSS
+    - SearchIndex
+  section:
+    - HTML
+    - RSS
+    - SearchIndex
+  taxonomyTerm:
+    - HTML
+    - RSS
+    - SearchIndex
+  taxonomy:
+    - HTML
+    - RSS
+    - SearchIndex
+outputFormats:
+  SearchIndex:
+    mediaType: application/json
+    baseName: index
+    isPlainText: true
+    notAlternative: true
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+# pulls information from git commit for modified date and info
+enableGitInfo: true
+
+# theme settings
+summaryLength: 70
+copyright: "©{year} John Hollowell, All Rights Reserved" # copyright symbol: $copy; current year: {year}
+timeout: 10000
+paginate: 13 # Number of items per page in paginated lists.
+rssLimit: 100

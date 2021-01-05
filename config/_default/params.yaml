@@ -1,0 +1,191 @@
+logoText: "/dev/random: A Bit of Everything"
+logoType: short
+logo: true
+description: "/dev/random"
+custom_css: []
+custom_js: []
+useFaviconGenerator: false
+languagedir: ltr
+themeOptions:
+  - light
+  - dark
+  - hacker
+  - solarized
+  - kimbie
+notAllowedTypesInHome:
+  - contact
+  - talks
+  - about
+  - showcase
+notAllowedTypesInHomeSidebar:
+  - about
+  - archive
+  - showcase
+notAllowedTypesInArchive:
+  - about
+  - talks
+  - showcase
+notAllowedTypesInHomeFeed:
+  - about
+  - archive
+  - contact
+  - talks
+  - showcase
+  - publication
+  - presentation
+  - resume
+  - gallery
+enablePinnedPosts: true
+viewportSize: normal
+enableUiAnimation: true
+hideSingleContentsWhenJSDisabled: false
+minItemsToShowInTagCloud: 1
+enableAppbarSearchIcon: true
+enableAppbarLangIcon: false
+homeHeaderType: text
+hideHomeHeaderWhenMobile: false
+showMobileMenuTerms:
+  - tags
+  - categories
+  - series
+enableThemeChange: true
+enableBreadcrumb: true
+enableSearch: true
+enableSearchHighlight: true
+enableGoToTop: true
+enableWhoami: false
+summaryShape: classic
+archiveGroupByDate: "2006" # or "2006-01"
+archivePaginate: 13
+paginateWindow: 1
+talksPaginate: 8
+talksGroupByDate: "2006"
+myname: John
+email: contact@johnhollowell.com
+whoami: "Creator, Coder, Photographer, Problem Solver"
+bioImageUrl: ""
+useGravatar: false
+location: "South Carolina, USA"
+organization: Clemson Student
+link: ""
+enableBio: true
+enableBioImage: true
+enableSidebar: true
+enableSidebarTags: true
+enableSidebarSeries: true
+enableSidebarCategories: true
+enableHomeSidebarTitles: true
+enableListSidebarTitles: true
+itemsPerCategory: 5
+sidebarPosition: right
+enableSidebarPostsByOrder: false
+
+enableToc: true
+hideToc: false
+tocPosition: inner
+tocFolding: false
+enableTocSwitch: true
+tocLevels:
+  - h2
+  - h3
+  - h4
+
+showPoweredBy: true
+showFeedLinks: true
+showSocialLinks: true
+enableLangChange: false
+# googleTagManager: ""
+# baiduAnalytics: ""
+# enableBusuanzi: false
+# busuanziSiteUV: false
+# busuanziSitePV: false
+# busuanziPagePV: false
+enableComment: false
+# disqus_shortname: ""
+# commento: false
+gitment:
+  owner: ""
+  repo: ""
+  clientId: ""
+  clientSecret: ""
+utterances:
+  owner: ""
+  repo: ""
+  message: ""
+  link: ""
+gitalk:
+  owner: ""
+  repo: ""
+  clientId: ""
+  clientSecret: ""
+# valine:
+#   enable: false
+#   appId: 你的appId
+#   appKey: 你的appKey
+#   notify: false
+#   verify: false
+#   avatar: mm
+#   placeholder: 说点什么吧...
+#   visitor: false
+# changyan:
+#   changyanAppid: ""
+#   changyanAppkey: ""
+# livere:
+#   livereUID: ""
+# isso:
+#   enable: false
+#   scriptSrc: ""
+#   dataAttrs: ""
+socialOptions:
+  email: "mailto:contact@johnhollowell.com"
+  phone: ""
+  facebook: ""
+  twitter: ""
+  github: "https://github.com/jhollowe"
+  stack-overflow: ""
+  instagram: ""
+  google-plus: ""
+  youtube: ""
+  medium: ""
+  tumblr: ""
+  linkedin: ""
+  pinterest: ""
+  stack-exchange: ""
+  telegram: ""
+  steam: ""
+  weibo: ""
+  douban: ""
+  csdn: ""
+  gitlab: ""
+  mastodon: ""
+  jianshu: ""
+  zhihu: ""
+  signal: ""
+  whatsapp: ""
+  matrix: ""
+  xmpp: ""
+  dev-to: ""
+  gitea: ""
+  google-scholar: ""
+  twitch: ""
+donationOptions:
+  enable: false
+  alipay: ""
+  wechat: ""
+  paypal: ""
+  patreon: ""
+  bitcoin: ""
+copyrightOptions:
+  enableCopyrightLink: false
+  copyrightLink: ""
+  copyrightLinkImage: ""
+  copyrightLinkText: ""
+# share:
+#   - name: facebook
+#   - name: twitter
+#     username: ""
+# footerLinks:
+#   - name: ""
+#     link: ""
+#   - name: ""
+#     link: ""
