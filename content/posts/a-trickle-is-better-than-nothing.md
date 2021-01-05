@@ -1,12 +1,20 @@
 ---
 title: "A Trickle Is Better Than Nothing"
 date: 2021-01-02T21:31:47-05:00
+description:
 
+draft: false
+enableToc: true
+hideToc: false
 tags:
-  - network
-  - web
-  - life
-  - opinion
+- web
+- life
+- opinion
+series:
+- 
+categories:
+- networks
+image:
 ---
 
 I'm at my extended family's house way out in the middle of nowhere; barely enough cellular connection for a SMS, let alone trying to use any data.
