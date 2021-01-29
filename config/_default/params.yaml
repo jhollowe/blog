@@ -63,11 +63,11 @@ talksGroupByDate: "2006"
 myname: John
 email: contact@johnhollowell.com
 whoami: "Creator, Coder, Photographer, Problem Solver"
-bioImageUrl: ""
+bioImageUrl: "avatar.jpg"
 useGravatar: false
 location: "South Carolina, USA"
 organization: Clemson Student
-link: ""
+link: "https://johnhollowell.com"
 enableBio: true
 enableBioImage: true
 enableSidebar: true
