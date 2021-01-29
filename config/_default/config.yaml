@@ -10,6 +10,8 @@ defaultContentLanguageInSubdir: false
 enableEmoji: true
 enableRobotsTXT: true
 
+googleAnalytics: UA-36251750-12
+
 markup:
   goldmark:
     renderer:
