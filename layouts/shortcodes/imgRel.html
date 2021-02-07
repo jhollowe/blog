@@ -1,0 +1,4 @@
+<img src="{{$.Page.Permalink}}{{.Get "src"}}" width="{{ default "50%" (.Get "width") }}"
+  {{- with .Get "alt" }} alt="{{.}}"{{ end -}}
+  {{- with .Get "height" }} height="{{.}}"{{ end -}}
+/>
