@@ -56,7 +56,7 @@ taxonomies:
   series: series
 
 # pulls information from git commit for modified date and info
-enableGitInfo: true
+enableGitInfo: false
 
 # theme settings
 summaryLength: 70
