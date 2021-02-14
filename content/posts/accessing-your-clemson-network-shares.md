@@ -1,7 +1,7 @@
 ---
 title: "Accessing Your Clemson Network Shares"
 date: 2021-02-07T14:08:51-05:00
-description:
+description: "Clemson University’s computer labs store files across all the computers using network shares. You usually just access these shares on the lab machines, but you can also add the shares on your own computer as a network drive."
 
 draft: false
 enableToc: false

@@ -1,7 +1,7 @@
 ---
 title: "And So It Begins"
 date: 2021-01-01T15:00:25-05:00
-description:
+description: "I've wanted to start a blog for a while, and I thought I might as well start it on the first of the year. I think I finally have enough things I want to talk about that a blog is worth the effort."
 
 draft: false
 enableToc: true
