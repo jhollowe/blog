@@ -7,8 +7,8 @@ custom_js: []
 useFaviconGenerator: false
 languagedir: ltr
 themeOptions:
-  - light
   - dark
+  - light
   - hacker
   - solarized
   - kimbie
