@@ -84,7 +84,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519 localhost
 Now we can just copy these files to all the other nodes so that they can use and will trust this key.
 
 ```bash
-for node in (node2 node3 node4); do # list all the nodes that should get the key
+for node in node2 node3 node4; do # list all the nodes that should get the key
   ssh-copy-id -i ~/.ssh/id_ed25519 $node # you will need to enter your password for this step
   scp ~/.ssh/id_ed25519 $node:.ssh/
   ssh $node "chmod 600 ~/.ssh/id_ed25519" # ensure the key is locked down so SSH will accept it.
@@ -94,6 +94,6 @@ done
 We can check that we can SSH into all the nodes without having to enter a password:
 
 ```bash
-for node in (node2 node3 node4); do
+for node in node2 node3 node4; do
   ssh $node "hostname"
 ```
