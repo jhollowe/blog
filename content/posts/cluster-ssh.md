@@ -73,7 +73,7 @@ ssh-keygen -t ed25519 -a 100 -f ~/.ssh/id_ed25519 -C "Inter-node cluster ssh"
 
 Next, we need our nodes to trust the key we just created. We'll start with getting the current node to trust the key.
 
-```bash
+```shell
 ssh-copy-id -i ~/.ssh/id_ed25519 localhost
 ```
 
@@ -83,7 +83,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519 localhost
 
 Now we can just copy these files to all the other nodes so that they can use and will trust this key.
 
-```bash
+```shell
 for node in node2 node3 node4; do # list all the nodes that should get the key
   ssh-copy-id -i ~/.ssh/id_ed25519 $node # you will need to enter your password for this step
   scp ~/.ssh/id_ed25519 $node:.ssh/
@@ -93,7 +93,7 @@ done
 
 We can check that we can SSH into all the nodes without having to enter a password:
 
-```bash
+```shell
 for node in node2 node3 node4; do
   ssh $node "hostname"
 ```
