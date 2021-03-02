@@ -1,6 +1,7 @@
 ---
 title: "Cluster SSH"
 date: 2021-02-14T14:15:41-05:00
+lastmod: 2021-03-02T17:47:13-05:00
 description: "One of the most important parts of a working cluster is the interconnection and communication between nodes. While the networking side will not be covered now, a very important aspect will be: passwordless SSH."
 
 draft: false
@@ -28,6 +29,7 @@ One of the most important parts of a working cluster is the interconnection and 
 The first task to getting easy access between nodes is ensuring SSH access between all the nodes.
 
 While not necessary, I recommend adding all your nodes to the `/etc/hosts` file on each node. For example, the `/etc/hosts` file might look like
+
 ```
 127.0.0.1 localhost
 
@@ -49,7 +51,23 @@ to which I would add (using the actual IPs of the nodes)
 192.168.0.14 node4
 ```
 
-After this is added to your hosts file on all your nodes, from any node you should be able to `ssh node1` from any of them successfully.
+{{< expand "Automate adding to your hosts files" >}}
+
+```shell
+for node in localhost node2 node3 node4; do
+ssh $node "cat | sudo tee -a /etc/hosts > /dev/null" << EOF
+
+192.168.0.11 node1
+192.168.0.12 node2
+192.168.0.13 node3
+192.168.0.14 node4
+EOF
+done
+```
+
+{{< /expand >}}
+
+After this is added to your hosts file on all your nodes, from any node you should be able to `ssh node1` from any of them successfully after entering your password.
 
 {{< alert theme="info" >}}
 **NOTE**: if you have not configured static IP addresses for your nodes, any changes to their IPs will require you changing the hosts file on all your nodes.
@@ -88,6 +106,14 @@ for node in node2 node3 node4; do # list all the nodes that should get the key
   ssh-copy-id -i ~/.ssh/id_ed25519 $node # you will need to enter your password for this step
   scp ~/.ssh/id_ed25519 $node:.ssh/
   ssh $node "chmod 600 ~/.ssh/id_ed25519" # ensure the key is locked down so SSH will accept it.
+done
+```
+
+And to make all the nodes trust each other's fingerprints
+
+```shell
+for node in node2 node3 node4; do
+  scp ~/.ssh/known_hosts $node:.ssh/
 done
 ```
 
