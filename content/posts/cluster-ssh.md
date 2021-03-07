@@ -14,6 +14,7 @@ hideToc: false
 tags:
 - SSH
 - cluster
+- networks
 series:
 - Raspberry Pi Cluster
 categories:
@@ -45,22 +46,22 @@ ff02::3 ip6-allhosts
 to which I would add (using the actual IPs of the nodes)
 
 ```
-192.168.0.11 node1
-192.168.0.12 node2
-192.168.0.13 node3
-192.168.0.14 node4
+192.168.0.11 node01
+192.168.0.12 node02
+192.168.0.13 node03
+192.168.0.14 node04
 ```
 
 {{< expand "Automate adding to your hosts files" >}}
 
 ```shell
-for node in localhost node2 node3 node4; do
+for node in localhost node02 node03 node04; do
 ssh $node "cat | sudo tee -a /etc/hosts > /dev/null" << EOF
 
-192.168.0.11 node1
-192.168.0.12 node2
-192.168.0.13 node3
-192.168.0.14 node4
+192.168.0.11 node01
+192.168.0.12 node02
+192.168.0.13 node03
+192.168.0.14 node04
 EOF
 done
 ```
@@ -102,7 +103,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519 localhost
 Now we can just copy these files to all the other nodes so that they can use and will trust this key.
 
 ```shell
-for node in node2 node3 node4; do # list all the nodes that should get the key
+for node in node02 node03 node04; do # list all the nodes that should get the key
   ssh-copy-id -i ~/.ssh/id_ed25519 $node # you will need to enter your password for this step
   scp ~/.ssh/id_ed25519 $node:.ssh/
   ssh $node "chmod 600 ~/.ssh/id_ed25519" # ensure the key is locked down so SSH will accept it.
@@ -112,7 +113,7 @@ done
 And to make all the nodes trust each other's fingerprints
 
 ```shell
-for node in node2 node3 node4; do
+for node in node02 node03 node04; do
   scp ~/.ssh/known_hosts $node:.ssh/
 done
 ```
