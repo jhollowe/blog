@@ -1,7 +1,6 @@
 ---
 title: "Cluster SSH"
-date: 2021-02-14T14:15:41-05:00
-lastmod: 2021-03-02T17:47:13-05:00
+date: 2021-03-07T23:15:41-05:00
 description: "One of the most important parts of a working cluster is the interconnection and communication between nodes. While the networking side will not be covered now, a very important aspect will be: passwordless SSH."
 
 draft: false
@@ -20,7 +19,7 @@ series:
 categories:
 - guide
 - networks
-image: post-cover-image/raspberry-pis.jpg
+image: post-cover-image/bash_logo.png
 ---
 
 One of the most important parts of a working cluster is the interconnection and communication between nodes. While the networking side will not be covered now, a very important aspect will be: passwordless SSH.

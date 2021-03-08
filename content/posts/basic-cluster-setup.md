@@ -18,7 +18,7 @@ series:
 - Raspberry Pi Cluster
 categories:
 - 
-image:
+image: post-cover-image/raspberry-pis.jpg
 ---
 
 So you want to build a Raspberry Pi cluster.
