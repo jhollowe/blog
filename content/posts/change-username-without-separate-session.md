@@ -15,7 +15,7 @@ tags:
 series:
 - 
 categories:
-- 
+- guide
 image:
 ---
 
@@ -55,8 +55,8 @@ ps -o pid= -u <current_username> | xargs kill && sleep 2 && <command>
   * `-o pid=` selects only the process ID (pid) and does not create a header for the column (`=`)
   * `-u <username>` selects only the processes running under `<username>`
 * `|` takes the output of the previous command (`ps`) and makes it the input of the following command (`xargs`)
-* `xargs` takes a line separated list (can change the separator) and turns them into arguments for the following command
-* `kill` takes a pid (or list of pids) and kills the process. While `kill` can send different signals to processes, this uses the default signal (TERM).
+* `xargs` takes a line separated list (can change the separator) and turns them into arguments for the following command (`-r` tells it to do nothing if its input is empty)
+* `kill` takes a pid (or list of pids) and terminates the process. While `kill` can send different signals to processes, this uses the default signal (TERM).
 * `&&` runs the following command if the preceding command exited successfully (exit code 0)
 * `sleep 2` wait 2 seconds for the killed processes to terminate
 
@@ -67,7 +67,7 @@ Now, we can get to actually changing the username!
 ### Changing The Username
 
 Now that we can run commands as root without our user running processes, we can proceed to change the username and other related tasks.
-These commands assume you are running as root. If not, you may need to insert some `sudo``s as necessary
+These commands assume you are running as root. If not, you may need to insert some `sudo`'s as necessary
 
 ```shell
 # change the user's username
@@ -76,7 +76,7 @@ usermod -l <new_username> <current_username>
 usermod -d /home/<new_username> -m <new_username>
 # change user's group name
 groupmod -n <new_username> <current_username>
-# replace username in all sudoers files
+# replace username in all sudoers files (DANGER!)
 sed -i.bak 's/<current_username>/<new_username>/g' /etc/sudoers
 for f in /etc/sudoers.d/*; do
   sed -i.bak 's/<current_username>/<new_username>/g' $f
@@ -88,3 +88,15 @@ done
 When we put it all together (with some supporting script), we get [change-username.sh]({{< urlRel "change-username.sh" >}}) as seen below:
 
 {{% include-code lang="shell" file="change-username.sh" %}}
+
+{{< expand "requirements">}}
+
+| Command(s)        | Package   |
+| ----------------- | --------- |
+| bash              | bash      |
+| ps, kill          | procps    |
+| usermod, groupmod | passwd    |
+| sed               | sed       |
+| xargs             | findutils |
+
+{{< /expand >}}

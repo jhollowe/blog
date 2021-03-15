@@ -20,7 +20,8 @@ fi
 
 echo "Changing $currentUser to $newUser"
 echo
-echo "Running this script has the possibility to break sudo (sudoers file) and WILL kill all lprocesses owned by $currentUser."
+echo "Running this script has the possibility to break sudo (sudoers file(s)) and WILL kill all processes owned by $currentUser"
+echo "$currentUser will be logged out and will need to reconnect as $newUser"
 read -n1 -s -r -p $'Continue [Y/n]?\n' key
 
 if [ $key != '' -a $key != 'y' -a $key != 'Y' ]; then
@@ -33,13 +34,14 @@ fi
 tmpFile=$(mktemp)
 cat > $tmpFile << EOF
 #!/bin/bash
+shopt -s extglob
 
 # terminate (nicely) any process owned by $currentUser
-ps -o pid= -u $currentUser | xargs kill
+ps -o pid= -u $currentUser | xargs -r kill
 # wait for all processes to terminate
 sleep 2
 # forcibly kill any processes that have not already terminated
-ps -o pid= -u $currentUser | xargs kill -KILL
+ps -o pid= -u $currentUser | xargs -r kill -s KILL
 
 
 # change the user's username
@@ -49,12 +51,14 @@ usermod -d "$newHome" -m "$newUser"
 # change user's group name
 groupmod -n "$newUser" "$currentUser"
 # replace username in all sudoers files
-sed -i.bak 's/$currentUser/$newUser/g' /etc/sudoers
-for f in /etc/sudoers.d/*; do
-  sed -i.bak 's/$currentUser/$newUser/g' $f
+sed -i.bak 's/'$currentUser'/'$newUser'/g' /etc/sudoers
+for f in /etc/sudoers.d/!(*.bak); do
+  echo "editing '\$f'"
+  sed -i.bak 's/'$currentUser'/'$newUser'/g' \$f
+  # TODO fix $f not getting the file path for some reason
 done
 EOF
 
 echo "Putting script into $tmpFile and running"
 chmod 777 $tmpFile
-sudo -s -- sh -c "nohup $tmpFile >/dev/null &"
+sudo -s -- bash -c "nohup $tmpFile >/dev/null &"
