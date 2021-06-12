@@ -56,17 +56,17 @@
         {
           "owner": "hugo",
           "pattern": {
-            // A error or warning from the templates (errorf or warnf)
+            // A error or warning from the templates (errorf/warnf)
             // does not contain file/line/column definition
             // ignores "fluff" error lines present with other errors
-            "regexp": "^(ERROR|WARN) \\d{4}\\\/\\d{2}\\\/\\d{2} \\d{2}:\\d{2}:\\d{2} (?!Rebuild failed:|Logged \\d+ error\\(s\\))([^\"]*)$",
+            "regexp": "^(ERROR|WARN) \\d{4}\\\/\\d{2}\\\/\\d{2} \\d{2}:\\d{2}:\\d{2} (?!Rebuild failed:|Logged \\d+ error\\(s\\))([^\"\\n]*)$",
             "severity": 1,
             "message": 2,
           },
           "background": {
             "activeOnStart": true,
             "beginsPattern": "Change detected, rebuilding site",
-            "endsPattern": "Total in \\d+ ms"
+            "endsPattern": "(Total|Built) in \\d+ ms"
           }
         }
       ],
@@ -88,7 +88,42 @@
         "clear": false
       },
       // TODO copy completed matcher from server task
-      "problemMatcher": [],
+      "problemMatcher": [
+        {
+          "fileLocation": "absolute",
+          "owner": "hugo",
+          "severity": "error",
+          "pattern": {
+            // and error with the build that references a file
+            "regexp": "Error: (.*: )?\"(.*):(\\d+):(\\d+)\": (.*)$",
+            "file": 2,
+            "line": 3,
+            "column": 4,
+            "message": 5,
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Change detected, rebuilding site",
+            "endsPattern": "Press Ctrl+C to stop"
+          }
+        },
+        {
+          "owner": "hugo",
+          "pattern": {
+            // A error or warning from the templates (errorf/warnf)
+            // does not contain file/line/column definition
+            // ignores "fluff" error lines present with other errors
+            "regexp": "^(ERROR|WARN) \\d{4}\\\/\\d{2}\\\/\\d{2} \\d{2}:\\d{2}:\\d{2} (?!Rebuild failed:|Logged \\d+ error\\(s\\))([^\"\\n]*)$",
+            "severity": 1,
+            "message": 2,
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Change detected, rebuilding site",
+            "endsPattern": "(Total|Built) in \\d+ ms"
+          }
+        },
+      ],
       "group": {
         "kind": "build",
         "isDefault": true
