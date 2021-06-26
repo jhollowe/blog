@@ -1,0 +1,1 @@
+{{ with .Site.GetPage (.Get 0) }}[{{ .Title }}]({{ .Permalink }}) {{ end }}<!-- markdownlint-disable-file -->
