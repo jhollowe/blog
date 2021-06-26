@@ -1,7 +1,7 @@
 ---
 title: "Change Username Without Separate Session"
 date: 2021-03-14T18:51:50-04:00
-description:  
+description: "Changing a user's username on Linux requires no processes be running under that user. This makes sense, but what if we only have that user accessible through a SSh connection?"
 
 draft: false
 enableToc: true
@@ -19,7 +19,7 @@ categories:
 image:
 ---
 
-Changing a user's username on Linux requires no processes be running under that user. This makes sense, but what if we only have that user accessible through a SSh connection. What if we don't want to allow external access to the root account? What if the root account doesn't have a password?
+Changing a user's username on Linux requires no processes be running under that user. This makes sense, but what if we only have that user accessible through a SSh connection? What if we don't want to allow external access to the root account? What if the root account doesn't have a password?
 
 ## Background
 
@@ -87,9 +87,9 @@ done
 
 When we put it all together (with some supporting script), we get [change-username.sh]({{< urlRel "change-username.sh" >}}) as seen below:
 
-{{% include-code lang="shell" file="change-username.sh" %}}
+{{% includeCode lang="shell" file="change-username.sh" %}}
 
-{{< expand "requirements">}}
+{{< expand "requirements" >}}
 
 | Command(s)        | Package   |
 | ----------------- | --------- |

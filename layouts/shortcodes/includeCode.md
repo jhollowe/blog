@@ -6,4 +6,4 @@
 {{- else}}
 file "{{ .Get "file"}}" not found.
 {{warnf "include-code: %s includes file \"%s\" which does not exist." .Page.File.Path $fullFile}}
-{{- end}}
+{{- end}} <!-- markdownlint-disable-file -->
