@@ -35,7 +35,7 @@ The following instructions assume you are using a Windows device to access the s
   4. Enter `\\neon.cs.clemson.edu\home` into the "folder" box. {{< imgRel src="neon_mapping.png" alt="Adding the Linux share as a network drive" >}}
   5. Check both "Reconnect as sign-in" and "Connect using different credentials" so the network drive will automatically connect and you can use your Clemson credentials (rather than your local device’s username and password). Click "Finish".
   6. Enter your University username (with @clemson.edu) and password. (You might have to click "more choices" in the login window to be able to enter a new username/password.)
-  {{< imgRel src="neon_creds.png" alt="example login credentials for neon.cs.clemson.edu">}}
+  {{< imgRel src="neon_creds.png" alt="example login credentials for neon.cs.clemson.edu" >}}
   7. Click "OK". Your School of Computing home directory should now appear under the drive letter you chose.
 
   {{< alert theme="info" >}}
