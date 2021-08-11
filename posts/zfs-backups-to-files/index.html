@@ -187,7 +187,7 @@ kimbie
 <div class=single__meta>
 <div class=single__infos>
 <time class=single__info title="Written At">📅&nbsp;Aug 11, 2021 </time>
-&nbsp;&#183;&nbsp; <span class=single__info title="Reading Time"> ☕&nbsp;8&nbsp;min read </span>
+&nbsp;&#183;&nbsp; <span class=single__info title="Reading Time"> ☕&nbsp;9&nbsp;min read </span>
 <span class=single__info>
 </span>
 </div>
@@ -199,6 +199,7 @@ kimbie
 </div>
 <article class=single__contents data-dir=ltr data-ani=true>
 <p>ZFS is a great filesystem that I use on most of my systems and it makes full-drive backups a breeze when I am refreshing hardware in my homelab. However, sometimes I want to backup to a non-ZFS system. These are the steps I use for fast and verified backups to a file on another computer.</p>
+<p><a href=#putting-it-all-together>TL;DR</a>: Combine the power of ZFS, zStandard, pv, and netcat to have a fast backup of a ZFS snapshot with verbose metrics of the process and progress.</p>
 <h2 id=background>Background</h2>
 <div class="alert alert-info" role=alert data-dir=ltr>If you already know about ZFS, snapshots, replication, and zStandard, feel free to skip this section.</div>
 <p>ZFS is a next-generation filesystem which supports a lot of great usability, data integrity, and performance features.<br>
