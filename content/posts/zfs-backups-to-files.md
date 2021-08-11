@@ -13,6 +13,7 @@ hideToc: false
 tags:
 - zfs
 - backup
+- sysadmin
 series:
 - 
 categories:
@@ -21,6 +22,8 @@ image:
 ---
 
 ZFS is a great filesystem that I use on most of my systems and it makes full-drive backups a breeze when I am refreshing hardware in my homelab. However, sometimes I want to backup to a non-ZFS system. These are the steps I use for fast and verified backups to a file on another computer.
+
+[TL;DR](#putting-it-all-together): Combine the power of ZFS, zStandard, pv, and netcat to have a fast backup of a ZFS snapshot with verbose metrics of the process and progress.
 
 ## Background
 
