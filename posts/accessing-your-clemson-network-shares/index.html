@@ -208,12 +208,12 @@ To access these network shares, you must either be on campus internet (WiFi or E
 <li>Click &ldquo;Map Network Drive&rdquo; in the top ribbon.</li>
 <li>Choose what drive letter you want the share to appear as (it doesn’t matter what you choose for this; I used &ldquo;Z&rdquo; for this example)</li>
 </ol>
-<div id=35b5f9ea305eeab1 class=tab>
+<div id=9fedfaf3a991b7ee class=tab>
 <div class=tab__links>
 <button class=tab__link aria-label="Tab link">Linux Share</button>
 <button class=tab__link aria-label="Tab link">Windows Share</button>
 </div>
-<div id=a621891df00c0f43 class=tab__content>
+<div id=6dac1cb8ddd65ece class=tab__content>
 <ol start=4>
 <li>Enter <code>\\neon.cs.clemson.edu\home</code> into the &ldquo;folder&rdquo; box. <figure></li>
 </ol>
@@ -225,7 +225,7 @@ To access these network shares, you must either be on campus internet (WiFi or E
 <img data-src=https://johnhollowell.com/blog/posts/accessing-your-clemson-network-shares/neon_creds.png alt="example login credentials for neon.cs.clemson.edu" data-caption src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%25%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22none%22 d=%22M0 0h24v24H0V0z%22/%3E%3Cpath fill=%22%23aaa%22 d=%22M19 3H5c-1.1.0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1.0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55.0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55.0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41.0.65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79.0z%22/%3E%3C/svg%3E" class=lazyload style=width:50%;height:>
 </figure>
 7. Click "OK". Your School of Computing home directory should now appear under the drive letter you chose.
-<div class="alert alert-info" role=alert data-dir=ltr><strong>NOTE</strong>: When adding new files via the network share, they are created with permissions defined by your <code>umask</code>. You can use <code>chmod xxx &lt;file></code> to change a files permissions to <code>xxx</code> (view a <a href=https://www.computerhope.com/unix/uchmod.htm>chomod guide</a> for more information on the chmod command)</div>
+<div class="alert alert-info" role=alert data-dir=ltr><strong>NOTE</strong>: When adding new files via the network share, they are created with permissions defined by your <code>umask</code>. You can use <code>chmod xxx &lt;file></code> to change a files permissions to <code>xxx</code> (view a <a href=https://www.computerhope.com/unix/uchmod.htm>chmod guide</a> for more information on the chmod command)</div>
 </div>
 <div id=515655885aa2f0e4 class=tab__content>
 <ol start=4>
@@ -241,7 +241,7 @@ To access these network shares, you must either be on campus internet (WiFi or E
 7. Click "OK". Your Windows home directory should now appear under the drive letter you chose.
 </div>
 </div>
-<script>'use strict';var containerId=JSON.parse('"35b5f9ea305eeab1"'),containerElem=document.getElementById(containerId),tabLinks=null,tabContents=null,ids=[],i;containerElem&&(tabLinks=containerElem.querySelectorAll('.tab__link'),tabContents=containerElem.querySelectorAll('.tab__content'));for(i=0;i<tabContents.length;i++)ids=ids.concat(tabContents[i].getAttribute('id')),tabContents[i].style.display='none',0===parseInt(i,10)&&!tabContents[i].classList.contains('active')&&tabContents[i].classList.add('active');for(i=0;i<tabLinks.length;i++)tabLinks[i].setAttribute('id',ids[i]),0===parseInt(i,10)&&!tabLinks[i].classList.contains('active')?tabLinks[i].classList.add('active'):tabLinks[i].classList.remove('active');tabContents.length>0&&(tabContents[0].style.display='block')</script>
+<script>'use strict';var containerId=JSON.parse('"9fedfaf3a991b7ee"'),containerElem=document.getElementById(containerId),tabLinks=null,tabContents=null,ids=[],i;containerElem&&(tabLinks=containerElem.querySelectorAll('.tab__link'),tabContents=containerElem.querySelectorAll('.tab__content'));for(i=0;i<tabContents.length;i++)ids=ids.concat(tabContents[i].getAttribute('id')),tabContents[i].style.display='none',0===parseInt(i,10)&&!tabContents[i].classList.contains('active')&&tabContents[i].classList.add('active');for(i=0;i<tabLinks.length;i++)tabLinks[i].setAttribute('id',ids[i]),0===parseInt(i,10)&&!tabLinks[i].classList.contains('active')?tabLinks[i].classList.add('active'):tabLinks[i].classList.remove('active');tabContents.length>0&&(tabContents[0].style.display='block')</script>
 <p>You now have access to your files as if they were just another drive in your computer. Do note that these drives will be significantly slower than your actual computer drives due to higher latency and lower bandwidth.</p>
 </article>
 <script defer src=/blog/js/clipboard.min.1626706afc88d95ebe1173b553ec732c6dc82a576989315fdf5e7779af738a44.js></script>

@@ -209,7 +209,20 @@ kimbie
 <h3 id=inter-node-ssh>Inter-node SSH</h3>
 <p>The first task to getting easy access between nodes is ensuring SSH access between all the nodes.</p>
 <p>While not necessary, I recommend adding all your nodes to the <code>/etc/hosts</code> file on each node. For example, the <code>/etc/hosts</code> file might look like</p>
-<pre tabindex=0><code>127.0.0.1 localhost
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>127.0.0.1 localhost
 
 # The following lines are desirable for IPv6 capable hosts
 ::1 ip6-localhost ip6-loopback
@@ -218,12 +231,25 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
-</code></pre><p>to which I would add (using the actual IPs of the nodes)</p>
-<pre tabindex=0><code>192.168.0.11 node01
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>to which I would add (using the actual IPs of the nodes)</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>192.168.0.11 node01
 192.168.0.12 node02
 192.168.0.13 node03
 192.168.0.14 node04
-</code></pre><div class=expand>
+</code></pre></td></tr></table>
+</div>
+</div><div class=expand>
 <button type=button class=expand__button aria-label="Expand Button">
 <span class="expand-icon expand-icon__right"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentcolor" d="M9.29 15.88 13.17 12 9.29 8.12c-.39-.39-.39-1.02.0-1.41.39-.39 1.02-.39 1.41.0l4.59 4.59c.39.39.39 1.02.0 1.41L10.7 17.3c-.39.39-1.02.39-1.41.0-.38-.39-.39-1.03.0-1.42z"/></svg>
 </span>
