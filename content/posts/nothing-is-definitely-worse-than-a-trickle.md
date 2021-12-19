@@ -20,6 +20,7 @@ categories:
 - networks
 image: post-cover-image/no-internet.png
 ---
+<!-- spell-checker:ignore FOSS -->
 
 {{< alert theme="info" >}} Please read {{% autoLink "a-trickle-is-better-than-nothing.md" %}} before reading this post.
 {{< /alert >}}

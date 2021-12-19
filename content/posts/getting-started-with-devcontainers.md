@@ -20,6 +20,7 @@ categories:
 - guide
 image: post-cover-image/vscode_remote-containers.png
 ---
+<!-- spell-checker:ignore -->
 
 Setting up and maintaining a development environment is hard, especially when you need to destructively test features or libraries. Especially for contributing to a new project, you don't know everything that is needed. Sometimes the install/development instructions assume some base tools or packages that are not included in your development environment of choice.
 
@@ -59,8 +60,10 @@ After a minute or so of downloading and building your development container, VS 
 
 There are several "modes" of how to store your files in which you can use devcontainers, each with its own benefits and drawbacks.
 
+<!-- markdownlint-disable MD037 MD033 -->
 | "mode"               | Pros                                                                                                                        | Cons                                                               |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | container volume     | * fast<br>* fully self-contained environment                                                                                | * hard to access files from outside container                      |
-| mounting a directory | * easy to get files in and out<br>* allows statefull local files                                                            | * slow file I/O<br>* add/edits/deletes affect the source directory |
+| mounting a directory | * easy to get files in and out<br>* allows stateful local files                                                             | * slow file I/O<br>* add/edits/deletes affect the source directory |
 | cloning a directory  | * as fast as a container volume<br>* easy to get files into container<br>* edits/deletes do not affect the source directory | * hard to get files out of container                               |
+<!-- markdownlint-enable MD037 MD033 -->

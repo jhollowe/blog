@@ -20,6 +20,7 @@ categories:
 - 
 image: post-cover-image/raspberry-pis.jpg
 ---
+<!-- spell-checker:ignore quattro heatsinks dstat iftop iotop -->
 
 So you want to build a Raspberry Pi cluster.
 

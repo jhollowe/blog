@@ -30,7 +30,8 @@ The first task to getting easy access between nodes is ensuring SSH access betwe
 
 While not necessary, I recommend adding all your nodes to the `/etc/hosts` file on each node. For example, the `/etc/hosts` file might look like
 
-```
+<!-- spell-checker:disable -->
+```text
 127.0.0.1 localhost
 
 # The following lines are desirable for IPv6 capable hosts
@@ -41,10 +42,11 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 ```
+<!-- spell-checker:enable -->
 
 to which I would add (using the actual IPs of the nodes)
 
-```
+```text
 192.168.0.11 node01
 192.168.0.12 node02
 192.168.0.13 node03

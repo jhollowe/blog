@@ -37,5 +37,4 @@ This virtual memory also allows things like memory-mapped files on disk and Copy
 
 the same process is used by KSM: it finds duplicate pages in the memory ranges registered with it, marks one of the physical pages as COW, and frees the other physical pages after mapping all the virtual pages to the one physical page.
 
-
 [^1]: https://kernelnewbies.org/Linux_2_6_32#Kernel_Samepage_Merging_.28memory_deduplication.29

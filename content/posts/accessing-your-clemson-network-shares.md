@@ -11,6 +11,7 @@ series:
 categories:
 - clemson
 ---
+<!-- spell-checker:ignore CCIT creds  -->
 
 Clemson University’s computer labs store files across all the computers using network shares. You usually just access these shares on the lab machines, but you can also add the shares on your own computer as a network drive.
 
@@ -39,7 +40,7 @@ The following instructions assume you are using a Windows device to access the s
   7. Click "OK". Your School of Computing home directory should now appear under the drive letter you chose.
 
   {{< alert theme="info" >}}
-  **NOTE**: When adding new files via the network share, they are created with permissions defined by your `umask`. You can use `chmod xxx <file>` to change a files permissions to `xxx` (view a [chomod guide](https://www.computerhope.com/unix/uchmod.htm) for more information on the chmod command)
+  **NOTE**: When adding new files via the network share, they are created with permissions defined by your `umask`. You can use `chmod xxx <file>` to change a files permissions to `xxx` (view a [chmod guide](https://www.computerhope.com/unix/uchmod.htm) for more information on the chmod command)
   {{< /alert >}}
   {{</ tab >}}
 

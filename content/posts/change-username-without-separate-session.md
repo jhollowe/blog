@@ -18,6 +18,7 @@ categories:
 - guide
 image:
 ---
+<!-- spell-checker:ignore nohup pids usermod -->
 
 Changing a user's username on Linux requires no processes be running under that user. This makes sense, but what if we only have that user accessible through a SSh connection? What if we don't want to allow external access to the root account? What if the root account doesn't have a password?
 
@@ -33,7 +34,7 @@ So we can't change the username of a user with running processes, but a SSH sess
 
 The main problem is executing a command from a user (and sudo-ing to root) while not having that user have a process running.
 
-Using either of the commands below allows a command to be run as the root user which will continue running 
+Using either of the commands below allows a command to be run as the root user which will continue running
 
 ```shell
 # interactive shell
@@ -91,6 +92,7 @@ When we put it all together (with some supporting script), we get [change-userna
 
 {{< expand "requirements" >}}
 
+<!-- spell-checker:disable -->
 | Command(s)        | Package   |
 | ----------------- | --------- |
 | bash              | bash      |
@@ -99,4 +101,5 @@ When we put it all together (with some supporting script), we get [change-userna
 | sed               | sed       |
 | xargs             | findutils |
 
+<!-- spell-checker:enable -->
 {{< /expand >}}

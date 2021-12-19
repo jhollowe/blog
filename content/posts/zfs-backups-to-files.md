@@ -11,7 +11,7 @@ hideToc: false
 # tocPosition: inner
 # tocLevels: ["h2", "h3", "h4"]
 tags:
-- zfs
+- ZFS
 - backup
 - sysadmin
 series:
@@ -20,6 +20,7 @@ categories:
 - guide
 image:
 ---
+<!-- spell-checker:ignore btrfs netcat subdataset fullsend zstreamdump  -->
 
 ZFS is a great filesystem that I use on most of my systems and it makes full-drive backups a breeze when I am refreshing hardware in my homelab. However, sometimes I want to backup to a non-ZFS system. These are the steps I use for fast and verified backups to a file on another computer.
 
@@ -28,7 +29,6 @@ ZFS is a great filesystem that I use on most of my systems and it makes full-dri
 ## Background
 
 {{< alert theme="info" >}}If you already know about ZFS, snapshots, replication, and zStandard, feel free to skip this section.{{< /alert >}}
-
 
 ZFS is a next-generation filesystem which supports a lot of great usability, data integrity, and performance features.
 One of the most useful features are snapshots. Since ZFS is a copy-on-write (COW) filesystem, it can make a "copy" of an entire filesystem instantly as it just stores the current state and keeps blocks of data even if they later get updated/deleted. This is incredibly useful for backing up a system, as you can make a snapshot of the system instantly while it is running and then take the time to transfer the data.
@@ -45,9 +45,9 @@ There are two hosts: one using ZFS which will be backed up (src.example.com), an
 
 ### Making a Snapshot
 
-ZFS send streams only work on snapshots, so we need to create a snapshot of the current files and data to be able to send it. If you already have a up-to-date snapshot (maybe from [automation]()), you can just uses that snapshot.
+ZFS send streams only work on snapshots, so we need to create a snapshot of the current files and data to be able to send it. If you already have a up-to-date snapshot (maybe from [automation](https://github.com/jimsalterjrs/sanoid)), you can just uses that snapshot.
 
-To create a snapshot, you either need to be root (run the following command with `sudo`), or have the snapshot ZFS permissions on the dataset. As we will be creating a recursive snapshot of all datatsets, it is easier to just run commands as root.
+To create a snapshot, you either need to be root (run the following command with `sudo`), or have the snapshot ZFS permissions on the dataset. As we will be creating a recursive snapshot of all datasets, it is easier to just run commands as root.
 
 The format of the snapshot command is  
 `zfs snap[shot] pool/datasetA/subdataset/thing1@snapshot-name`.  
@@ -170,7 +170,6 @@ Now we can send it data to save to the file
 zfs send -R tank@full-backup | pv -s 24G | nc dest.example.com 12345
 ```
 
-
 ## Putting it all together
 
 ```shell
@@ -186,8 +185,10 @@ sendSize = $(zfs send -v --dryrun -R tank@full-backup | grep "total estimated" |
 zfs send -R tank@full-backup | pv -cN raw -s ${sendSize} | zstd -c -T0 --adapt=min=1,max=19 | pv -cN compressed | nc dest.example.com 13245
 ```
 
+<!-- markdownlint-disable MD034 -->
 [^1]: https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html
 [^2]: As far as I know, the `.zfsnap` is not an official or commonly used extension. However, it helps me know what the file is, so I've used it here. Use whatever file name and extension you want.
 [^3]: https://linux.die.net/man/1/pv
 [^4]: https://linux.die.net/man/8/zstreamdump
 [^5]: The documentation for zStandard notes that using the `-T` flag with `--adapt` can cause the level to get stuck low. If you have problems with the compression level getting stuck at a low value, try removing the threads flag.
+<!-- markdownlint-enable MD034 -->

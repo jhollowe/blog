@@ -16,8 +16,9 @@ categories:
 - networks
 image:
 ---
+<!-- spell-checker:ignore datacenter -->
 
-I'm at my extended family's house way out in the middle of nowhere; barely enough cellular connection for a SMS, let alone trying to use any data.
+I'm at my extended family's house way out in the middle of nowhere; barely enough cellular connection for an SMS, let alone trying to use any data.
 They have DSL, but they are so far out that the signal is poor and it also is horrible speed. The fastest I saw while I was there was 700Kbps.
 
 While it is always a shock to go from over 100Mbps to under 1Mbps, I think that we are in an age where low bandwidth is not a show-stopper. Now obviously, downloading large files and games is a lot more tedious, I have found the "set everything to download overnight" method works quite well.
