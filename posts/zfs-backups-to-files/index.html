@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://johnhollowell.com/blog/posts/zfs-backups-to-files/">
 <meta property="og:type" content="article">
 <meta property="og:description" content="ZFS is a great filesystem which I use on most of my systems and it makes full-drive backups a breeze. However, sometimes I want to backup to a non-ZFS system. These are the steps I use for fast and verified backups to a file on another computer.">
-<meta name=generator content="Hugo 0.91.0">
+<meta name=generator content="Hugo 0.92.1">
 <meta name=msapplication-TileColor content="#fff">
 <meta name=theme-color content="#fff">
 <meta name=msapplication-navbutton-color content="#fff">
@@ -378,7 +378,7 @@ nc -l <span class=m>12345</span> <span class=p>|</span> pv &gt; /path/to/saved/f
 <td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=c1># on src.example.com</span>
 zfs snap -r tank@full-backup
-<span class=nv>sendSize</span> <span class=o>=</span> <span class=k>$(</span>zfs send -v --dryrun -R tank@full-backup <span class=p>|</span> grep <span class=s2>&#34;total estimated&#34;</span> <span class=p>|</span> sed -r <span class=s1>&#39;s@total estimated size is ([0-9\.]+)(.).*@\1\n\2@&#39;</span> <span class=p>|</span> xargs <span class=nb>printf</span> <span class=s2>&#34;%.0f%s&#34;</span><span class=k>)</span>
+<span class=nv>sendSize</span><span class=o>=</span><span class=k>$(</span>zfs send -v --dryrun -R tank@full-backup <span class=p>|</span> grep <span class=s2>&#34;total estimated&#34;</span> <span class=p>|</span> sed -r <span class=s1>&#39;s@total estimated size is ([0-9\.]+)(.).*@\1\n\2@&#39;</span> <span class=p>|</span> xargs <span class=nb>printf</span> <span class=s2>&#34;%.0f%s&#34;</span><span class=k>)</span>
 
 zfs send -R tank@full-backup <span class=p>|</span> pv -cN raw -s <span class=si>${</span><span class=nv>sendSize</span><span class=si>}</span> <span class=p>|</span> zstd -c -T0 --adapt<span class=o>=</span><span class=nv>min</span><span class=o>=</span>1,max<span class=o>=</span><span class=m>19</span> <span class=p>|</span> pv -cN compressed <span class=p>|</span> nc dest.example.com <span class=m>13245</span>
 </code></pre></td></tr></table>
@@ -549,7 +549,7 @@ See Also
 </div>
 <div class=footer__poweredby>
 <p class=caption>
-©2021 John Hollowell, All Rights Reserved
+©2022 John Hollowell, All Rights Reserved
 </p>
 <p class=caption>Powered by <a href=https://gohugo.io/ target=_blank rel=noreferrer>Hugo</a> and the <a href=https://github.com/zzossig/hugo-theme-zzo target=_blank rel=noreferrer>Zzo theme</a></p>
 </div>
