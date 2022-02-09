@@ -180,7 +180,7 @@ nc -l 12345 | pv > /path/to/saved/file.zfsnap.zst
 ```shell
 # on src.example.com
 zfs snap -r tank@full-backup
-sendSize = $(zfs send -v --dryrun -R tank@full-backup | grep "total estimated" | sed -r 's@total estimated size is ([0-9\.]+)(.).*@\1\n\2@' | xargs printf "%.0f%s")
+sendSize=$(zfs send -v --dryrun -R tank@full-backup | grep "total estimated" | sed -r 's@total estimated size is ([0-9\.]+)(.).*@\1\n\2@' | xargs printf "%.0f%s")
 
 zfs send -R tank@full-backup | pv -cN raw -s ${sendSize} | zstd -c -T0 --adapt=min=1,max=19 | pv -cN compressed | nc dest.example.com 13245
 ```
