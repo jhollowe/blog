@@ -374,13 +374,15 @@ nc -l <span class=m>12345</span> <span class=p>|</span> pv &gt; /path/to/saved/f
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
+</span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=c1># on src.example.com</span>
-zfs snap -r tank@full-backup
-<span class=nv>sendSize</span><span class=o>=</span><span class=k>$(</span>zfs send -v --dryrun -R tank@full-backup <span class=p>|</span> grep <span class=s2>&#34;total estimated&#34;</span> <span class=p>|</span> sed -r <span class=s1>&#39;s@total estimated size is ([0-9\.]+)(.).*@\1\n\2@&#39;</span> <span class=p>|</span> xargs <span class=nb>printf</span> <span class=s2>&#34;%.0f%s&#34;</span><span class=k>)</span>
+<span class=nv>snapName</span><span class=o>=</span><span class=s1>&#39;tank@full-backup&#39;</span>
+zfs snap -r <span class=si>${</span><span class=nv>snapName</span><span class=si>}</span>
+<span class=nv>sendSize</span><span class=o>=</span><span class=k>$(</span>zfs send -v --dryrun -R <span class=si>${</span><span class=nv>snapName</span><span class=si>}</span> <span class=p>|</span> grep <span class=s2>&#34;total estimated&#34;</span> <span class=p>|</span> sed -r <span class=s1>&#39;s@total estimated size is ([0-9\.]+)(.).*@\1\n\2@&#39;</span> <span class=p>|</span> xargs <span class=nb>printf</span> <span class=s2>&#34;%.0f%s&#34;</span><span class=k>)</span>
 
-zfs send -R tank@full-backup <span class=p>|</span> pv -cN raw -s <span class=si>${</span><span class=nv>sendSize</span><span class=si>}</span> <span class=p>|</span> zstd -c -T0 --adapt<span class=o>=</span><span class=nv>min</span><span class=o>=</span>1,max<span class=o>=</span><span class=m>19</span> <span class=p>|</span> pv -cN compressed <span class=p>|</span> nc dest.example.com <span class=m>13245</span>
+zfs send -R <span class=si>${</span><span class=nv>snapName</span><span class=si>}</span> <span class=p>|</span> pv -cN raw -s <span class=si>${</span><span class=nv>sendSize</span><span class=si>}</span> <span class=p>|</span> zstd -c -T0 --adapt<span class=o>=</span><span class=nv>min</span><span class=o>=</span>1,max<span class=o>=</span><span class=m>19</span> <span class=p>|</span> pv -cN compressed <span class=p>|</span> nc dest.example.com <span class=m>12345</span>
 </code></pre></td></tr></table>
 </div>
 </div>
