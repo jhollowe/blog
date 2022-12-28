@@ -6,7 +6,79 @@
     {
       "label": "Serve",
       "type": "shell",
-      "command": "hugo serve --minify --disableFastRender",
+      "command": "hugo serve --minify --disableFastRender --buildDrafts --buildFuture",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "fileLocation": "absolute",
+          "owner": "hugo",
+          "severity": "error",
+          "pattern": {
+            // and error on the initial build
+            "regexp": "Error: (.*: )?\"(.*):(\\d+):(\\d+)\": (.*)$",
+            "file": 2,
+            "line": 3,
+            "column": 4,
+            "message": 5,
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Change detected, rebuilding site",
+            "endsPattern": "Press Ctrl+C to stop"
+          }
+        },
+        {
+          "fileLocation": "absolute",
+          "owner": "hugo",
+          "pattern": {
+            // A error or warning during rebuild
+            "regexp": "^(ERROR|WARN) \\d{4}\\\/\\d{2}\\\/\\d{2} \\d{2}:\\d{2}:\\d{2} (.*: )?\"(.*):(\\d+):(\\d+)\": (.*)$",
+            "severity": 1,
+            "file": 3,
+            "line": 4,
+            "column": 5,
+            "message": 6,
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Change detected, rebuilding site",
+            "endsPattern": "(Total|Built) in \\d+ ms"
+          }
+        },
+        {
+          "owner": "hugo",
+          "pattern": {
+            // A error or warning from the templates (errorf/warnf)
+            // does not contain file/line/column definition
+            // ignores "fluff" error lines present with other errors
+            "regexp": "^(ERROR|WARN) \\d{4}\\\/\\d{2}\\\/\\d{2} \\d{2}:\\d{2}:\\d{2} (?!Rebuild failed:|Logged \\d+ error\\(s\\))([^\"\\n]*)$",
+            "severity": 1,
+            "message": 2,
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Change detected, rebuilding site",
+            "endsPattern": "(Total|Built) in \\d+ ms"
+          }
+        }
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Serve (Fast Render)",
+      "type": "shell",
+      "command": "hugo serve --minify",
       "presentation": {
         "echo": true,
         "reveal": "always",

@@ -19,6 +19,7 @@ categories:
 - conference
 image: post-cover-image/ato22.png
 ---
+<!-- spell-checker:ignore HVAC FOSS livestreamed gamification -->
 
 This was my first year going to the All Things Open and my first in-person conference in several years.
 
