@@ -14,5 +14,6 @@
     "unencrypted",
     "zfsnap",
     "zstd"
-  ]
+  ],
+  "git.detectSubmodules": false
 }
