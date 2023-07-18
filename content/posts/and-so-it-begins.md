@@ -20,7 +20,7 @@ So why the name "/dev/random"? Well, I'm a geek and this blog will be about anyt
 
 ## So... Why?
 
-This blog is mostly a place for me to put information for my future self and others. Don't expect any deep, rambling prose. I'm not a spectacular writer and there are many things in my life that don't merit blogging about. However, I have a vary wide range of knowledge which I often will forget by the next time I need to use it. This gives me a way to record my experiences and experiments in a public place to which I can reference others. This blog is also an experiment, how meta is that?
+This blog is mostly a place for me to put information for my future self and others. Don't expect any deep, rambling prose. I'm not a spectacular writer and there are many things in my life that don't merit blogging about. However, I have a very wide range of knowledge which I often will forget by the next time I need to use it. This gives me a way to record my experiences and experiments in a public place to which I can reference others. This blog is also an experiment, how meta is that?
 
 ## When can I get more of this *great* content?
 
