@@ -13,7 +13,7 @@ tags:
 - hardware
 - life
 series:
-- 
+- framework laptop
 categories:
 - review
 image: post-cover-image/framework.jpg
