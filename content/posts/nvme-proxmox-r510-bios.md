@@ -1,5 +1,5 @@
 ---
-title: "NVMe Boot in Proxmox on Older BIOS"
+title: "NVMe Boot in Proxmox on R510 BIOS"
 date: 2022-12-27T18:54:12Z
 description: My process of finding the best way to boot Proxmox off an NVMe drive in an old Dell R510
 
@@ -12,6 +12,11 @@ tags:
 image:
 ---
 <!-- spell-checker:ignore bootloader hackintoshes UEFI gparted cmdline -->
+
+{{< notice info "Outdated" >}} While this information is still relevant, more complete information on this topic can be found on [Booting from NVMe on older BIOSes](../nvme-proxmox-boot)
+{{< /notice >}}
+
+---
 
 Trying to boot off an NVMe drive on older hardware can cause some issues. If you are running an older BIOS/UEFI, it may not have the needed drivers to understand how to talk to a NVMe drive. I ran into this exact issue when trying to boot my Dell R510 from an NVMe drive.
 
