@@ -11,7 +11,7 @@ hideToc: false
 # tocPosition: inner
 # tocLevels: ["h2", "h3", "h4"]
 tags:
-- 
+- clemson
 series:
 - Getting started in CS at Clemson
 categories:

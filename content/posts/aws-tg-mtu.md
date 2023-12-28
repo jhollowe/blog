@@ -14,9 +14,10 @@ tags:
 - cloud
 - AWS
 - networks
+series:
+- 
 categories:
 - work
-- story time
 image:
 ---
 <!-- spell-checker:ignore Wireshark triaging -->

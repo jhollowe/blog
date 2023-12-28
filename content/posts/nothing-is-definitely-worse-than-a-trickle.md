@@ -12,11 +12,11 @@ hideToc: false
 # tocLevels: ["h2", "h3", "h4"]
 tags:
 - web
-- life
-- opinion
 series:
 - 
 categories:
+- life
+- opinion
 - networks
 image: post-cover-image/no-internet.png
 ---

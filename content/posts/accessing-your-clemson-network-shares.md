@@ -6,10 +6,12 @@ description: "Clemson University’s computer labs store files across all the co
 draft: false
 enableToc: false
 hideToc: true
+tags:
+- clemson
 series:
 - Getting started in CS at Clemson
 categories:
-- clemson
+- 
 ---
 <!-- spell-checker:ignore CCIT creds  -->
 

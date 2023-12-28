@@ -9,11 +9,11 @@ hideToc: false
 tags:
 - web
 - life
-- opinion
 series:
 - 
 categories:
 - networks
+- opinion
 image:
 ---
 <!-- spell-checker:ignore datacenter -->

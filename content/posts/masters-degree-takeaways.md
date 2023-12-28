@@ -11,12 +11,12 @@ hideToc: false
 # tocPosition: inner
 # tocLevels: ["h2", "h3", "h4"]
 tags:
-- life
-- opinion
+- clemson
 series:
 - 
 categories:
-- 
+- life
+- opinion
 image: post-cover-image/masters-degree-takeaways.png
 ---
 <!-- spell-checker:ignore assistantship -->
